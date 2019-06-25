@@ -1,0 +1,56 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+.circle1,
+.circle2,
+.circle3,
+.circle4,
+.circle5{
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    border: 10px solid black;
+    border-radius: 50%;
+}
+
+.main{
+    position: absolute;
+    
+    left: 50%;
+    top: 50%;
+    margin-left: -190px;
+    margin-top: -93px;
+    /* border:5px solid black; */
+    /* 内容绝对定位 无法撑开容器 */
+    height: 186px;
+    width: 380px;
+    
+    
+    }
+.circle1{
+    border-color: red;
+    left: 0px;
+    top: 0px;
+}
+.circle2{
+    border-color: green;
+    z-index: 1;
+    left: 130px;
+    top: 0px;
+}
+.circle3{
+    border-color: blue;
+    left: 260px;
+    top: 0px;
+}
+.circle4{
+    border-color: yellow;
+    left: 65px;
+    top: 70px;
+}
+.circle5{
+    border-color: black;
+    left: 195px;
+    top: 70px;
+}

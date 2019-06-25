@@ -1,0 +1,66 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+div{
+    font-size: 12px;
+    border: 1px solid black;
+    height: 100px;
+    width: 300px;
+    text-align: left;
+    line-height: 20px;
+    /* 单行文本垂直居中
+    line-height 单行文本所占高度
+    单行文本高度=容器高度
+     */
+     text-indent: 2em;
+     
+} 
+a{
+    text-decoration: none;
+    cursor: help;
+}
+/* 伪类选择器 */
+a:hover{
+    background-color: #f04;
+    border-radius: 10px;
+}
+span{
+    background-color: #f04;
+    width: 100px;
+    height: 100px;
+    /* inline 无法改变宽高 */
+}
+div{
+    background-color: #f04;
+    
+}
+img{
+    width: 100px;
+    margin-left: -8px;
+}
+.red{
+    background-color: red;
+}
+.green{
+    background-color: green;
+}
+.blue{
+    background-color: blue;
+}
+.size1{
+    width: 100px;
+    height:100px;
+}
+.size2{
+    width: 200px;
+    height: 200px;
+}
+.size3{
+    width: 300px;
+    height: 300px;
+}
+
+ul{
+    list-style: none;
+}

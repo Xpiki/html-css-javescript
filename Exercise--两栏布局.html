@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    *{
+        margin: 0px;
+        padding: 0px;
+    }
+    .left{
+        position: absolute;
+        /* 绝对定位脱离文档流,下面的div会顶上来 */
+        right: 0px;
+        background-color: black;
+        height: 100px;
+        width: 100px;
+        opacity: 0.5;
+    }
+
+    .right{
+        /* 不设宽度的div 宽度随浏览器的宽度 */
+        background-color: #fcc;
+        height: 100px;
+        margin-right: 100px;
+
+    }
+    
+    </style>
+</head>
+<body>
+    <div class="left"></div>
+    <div class="right"></div>
+    <!-- <div class="left"></div> -->
+    
+</body>
+</html>
+<!-- 2019.06.19 14:00 -->

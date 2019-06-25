@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    *{
+        margin: 0px;
+        padding: 0px;
+    }
+    .father{
+        /* border-top: 1px solid black; */
+        /* bfc(block format context)*/
+        /* 
+        方法1:为父级div加顶棚 border-top  能解决,不推荐 
+        方法2：触发一个盒子的bfc
+            1. position:absolute;
+            2. display:inline-block 
+            3. float:left/right
+            4. overflow:hidden //超出父级范围的区域隐藏
+        上述方法能弥补塌陷问题(不是解决),但会引发新的问题
+        */
+        width: 100px;
+        height: 100px;
+        margin-left: 100px;
+        margin-top: 100px;
+        background-color: black;
+    }
+    .son{
+        width:50px;
+        height: 50px;
+        margin-left: 50px;
+        margin-top: 50px;
+        /* 上面这条代码效果没显示 */
+        background-color: green;
+    }
+    .box1{
+        background-color: red;
+        margin-right: 50px;
+    }
+    .box2{
+        background-color: green;
+        margin-left: 50px;
+    }
+    .demo1{
+        background-color: red;
+        margin-bottom: 100px;
+    
+    }
+    .demo2{
+        background-color: blue;
+        margin-top: 100px;
+        /* margin-botton和margin-top不合并,取最大值 */
+        /* 通过修改盒子的bfc达到合并的效果,但是没有必要,如果需要两个div垂直间隔200px,可以直接修改margin-bottom为200px,没必要上下都取100px */
+    }
+    .wrapper{
+        overflow: hidden;
+        /* 加上bfc,垂直margin不合并 */
+    }
+    </style>
+</head>
+<body>
+    <h1>margin 塌陷经典问题</h1>
+    <div class="father">
+        <div class="son"></div>
+        <!-- 水平方向margin父级子级正常定位
+        垂直方向margin-top取最大值,同时移动 -->
+    </div>
+
+    <h1>margin 合并经典问题</h1>
+    <!-- 区域不能共用 -->
+    <!-- 可不解决，不能为了改变样式而修改html结构 -->
+    <span class="box1">123</span>
+    <span class="box2">456</span>
+    <div class="wrapper">
+        <div class="demo1">1</div>
+        <div class="demo2">2</div>
+    </div>
+</body>
+</html>

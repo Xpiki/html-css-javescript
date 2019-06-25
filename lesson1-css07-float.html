@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    .wrapper{
+        width: 300px;
+        height: 300px;
+        border: 1px solid black;
+    }
+    .content{
+        float: left;
+        color: red;
+        background-color: blanchedalmond;
+        width: 100px;
+        height: 100px;
+
+    }
+    .box{
+        float: left;
+        width: 100px;
+        height: 100px;
+        background-color: black;
+        opacity: 0.5;
+    }
+    .demo{
+        width: 150px;
+        height: 150px;
+        background-color: brown;
+
+    }
+    .father{
+        width: 400px;
+        border: 1px solid black;
+    }
+    .son{
+        float: left;
+        width: 100px;
+        height: 100px;
+        background-color: red;
+    }
+    p{
+        border: 0px solid black;
+        clear: both;
+    }
+    </style>
+</head>
+<body>
+    <!-- 浮动布局 -->
+    <div class="wrapper">
+        <div class="content">1</div>
+        <div class="content">2</div>
+        <div class="content">3</div>
+        <div class="content">4</div>
+        <div class="content">5</div>
+        <div class="content">6</div>
+        <div class="content">7</div>
+        <div class="content">8</div>
+        <div class="content">9</div>
+        
+    </div>
+    <!-- 浮动元素产生了浮动流 -->
+    <!-- 只有块级元素看不到浮动流,会与浮动元素产生分层 -->
+    <!-- 产生了bfc的元素和文本类元素(inline)的元素以及文本都能看到浮动元素,不分层 -->
+    <div class="box"></div>
+    <div class="demo"></div>
+    <!-- 需求：不设置父级的高度,通过浮动的内容来撑开父级 -->
+    
+    <div class="father">
+        <div class="son">1</div>
+        <div class="son">2</div>
+        <div class="son">3</div>
+        <div class="son">4</div>
+        <div class="son">5</div>
+        <p></p>
+        <!-- clear:both 清除p标签前后的浮动流 -->
+        <!-- 这个方法还不正确 -->
+    </div>
+</body>
+</html>

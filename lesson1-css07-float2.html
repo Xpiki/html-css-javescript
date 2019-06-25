@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        span::before{
+            content: "WZBC,";
+            /* 伪元素是行级元素 */
+            width: 100px;
+            height: 100px;
+            background-color: red;
+
+            display: inline-block;
+        }
+        span::after{
+            content:",你好"
+        }
+        .father{
+        width: 400px;
+        border: 1px solid black;
+    }
+    .son{
+        float: left;
+        width: 100px;
+        height: 100px;
+        background-color: red;
+    }
+    .father::after{
+        content: "";
+        clear: both;
+        /* 伪元素是行级元素,而清除浮动必须是块级元素,因此加上下面一句 */
+        display: block;
+    }
+    </style>
+</head>
+<body>
+    <!-- 伪元素 天生存在于标签中-->
+    <span>蒋佩凯</span>
+
+    <div class="father">
+            <div class="son">1</div>
+            <div class="son">2</div>
+            <div class="son">3</div>
+            <div class="son">4</div>
+            <div class="son">5</div>
+            
+            <!-- clear:both 清除p标签前后的浮动流 -->
+            <!-- 这个方法还不正确 改变了页面里的结构-->
+    </div>
+    <!-- 把父级设计成bfc属性,也可以达到相同的效果，但是宽度会随内容而变化，因为posion，float会从系统内部设置成inline-block,宽度随内容增长 -->
+</body>
+</html>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    .oneline{
+        width: 300px;
+        border: 1px solid black;
+        height: 25px;
+        line-height: 25px;
+
+        /* 让文本失去换行功能 */
+        white-space: nowrap;
+        /*  */
+        overflow: hidden;
+        /* ... */
+        text-overflow: ellipsis;
+    }
+    .multline{
+        width: 300px;
+        border: 1px solid black;
+        height: 50px;
+        line-height: 25px;
+        overflow: hidden;
+    }
+    .image{
+        
+        height: 200px;
+        width: 200px;
+        border: 1px solid black;
+        background-image: url(kobe.jpg);
+        background-size: 100px 100px;
+        background-repeat: no-repeat;
+        background-position: center center;
+    }
+    .iqiyi{
+        display: inline-block;
+        text-decoration: none;
+        color: #424242;
+        width: 200px;
+        height: 80px;
+        border: 1px solid black;
+        background-image: url(//www.iqiyipic.com/common/fix/site-v4/sprite-headLogo-index.png);
+        background-size: 200px 80px;
+        background-repeat: no-repeat;
+        /* 当网速不好的时候图片加载不出来,显示默认文字 */
+        /* 方法1. 
+        text-indent: 200px;
+        white-space: nowrap;
+        overflow: hidden; */
+        /* 方法2.
+        height:0px;
+        通过padding-top来设置盒子高度;
+        padding-top: 80px;
+        overflow: hidden;
+         */
+        /* 注意：
+        P标签里不能套Div标签
+        a标签里不能套a标签
+         */
+       
+    }
+    </style>
+</head>
+<body>
+    <!-- 1.文本溢出容器，要用省略 --> 
+    <p class="oneline">SQLServer2008要卸载后，经常不能重新安装，或者安装过程中出现这样那样的问题，归其原因，就是SQLServer2008没有卸载干净，下面就给大家介绍下怎么彻彻底底，干干净净地把SQLServer2008从你的电脑中删除掉。</p>
+    <p class="multline">SQLServer2008要卸载后，经常不能重新安装，或者安装过程中出现这样那样的问题，归其原因，就是SQLServer2008没有卸载干净，下面就给大家介绍下怎么彻彻底底，干干净净地把SQLServer2008从你的电脑中删除掉。</p>
+
+    <a class="iqiyi" href="https://www.taobao.com" target="_blank">爱奇艺</a>
+</body>
+</html>

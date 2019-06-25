@@ -1,0 +1,104 @@
+<!-- 
+//html
+//hyperText  markup language
+//超文本标记语言 
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>来了老弟</title>
+</head>
+<body>
+    <p>这是一个p标签</p>
+
+    <!-- h${这是标题}*6 -->
+    <h1>这是标题</h1>
+    <h2>这是标题</h2>
+    <h3>这是标题</h3>
+    <h4>这是标题</h4>
+    <h5>这是标题</h5>
+    <h6>这是标题</h6>
+    
+    <strong>加粗</strong>
+    <em>斜体</em>
+
+    <b>50</b> <del>100</del>
+
+    <address>温州商学院,茶山高教博园</address>
+
+
+    <!-- 空格/回车仅仅是文本单词分隔符 -->
+    <div style="background-color: red;width: 100px;height: 100px;">asgasgasgsdgdsgsdgasgsadgdsagasd 啊首府萨格发生噶山豆根山豆根但是   asgdsagsd agdgs asdsa wge gsgsdg</div>
+    <br>
+
+    <!-- 想要打印<> &lt;less than &gt;great than-->
+    <p>现在我要打印两个尖括号&lt;div&gt;</p>
+
+    <!-- 分隔符 -->
+    <hr> 
+
+<a href="http://www.baidu.com" target="_blank">www.baidu.com</a>
+<!-- target="_blank" 
+        在新标签页打开超链接网页
+-->
+<a href="tel:15957759696" style="display:block">call me</a> 
+<!-- display block 单独成行          -->
+<a href="mailto:jpk960123@163.com">email</a>
+<br>
+
+
+<form action="#" method="GET">
+    <p>
+        username:<input type="text" name="username" id="" value="请输入用户名"  style="color:red"
+        onfocus="if(this.value=='请输入用户名'){this.value='';this.style.color='#424242'}" 
+        onblur="if(this.value==''){this.value='请输入用户名';this.style.color='red'}">
+    </p>
+    <p>
+       password:<input type="password" name="password"> 
+    </p>
+    <input type="submit" value="login">
+    
+</form>
+
+<!-- 单选框 -->
+<form action="">
+    1.star1<input type="radio" name="star" id="" value="star1" checked="checked">
+    2.star2<input type="radio" name="star" id="" value="star2">
+    3.star3<input type="radio" name="star" id="" value="star3">
+    <!-- 通过name将单选框编组 -->
+    <input type="submit" value="提交">
+</form>
+
+<!-- 复选框 -->
+<form action="">
+        1.张三<input type="checkbox" name="name" id="" value="name1" checked="checked">
+        2.李四<input type="checkbox" name="name" id="" value="name2">
+        3.王五<input type="checkbox" name="name" id="" value="name3">
+        <input type="submit" value="提交">
+ </form>
+<form action="">
+     <select name="city" id="">
+     <option value="温州">温州</option>
+     <option >丽水</option>
+     <option >台州</option>
+     <option >杭州</option>
+     <option >宁波</option>
+    </select>
+    <input type="submit" value="提交">
+</form>
+    <!-- 
+        shell  内核
+
+    IE              Trident
+    Firefox         Gecko
+    Google chrome   webkit/blink 2014
+    Safari          Webkit
+    Opera           presto 
+-->
+
+</body>
+</html>

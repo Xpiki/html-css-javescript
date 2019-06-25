@@ -1,0 +1,30 @@
+div > em{
+    background-color: #f04;
+}
+
+div.demo{
+    background-color: green;
+}
+em,
+strong,
+span{
+          background-color: #f04;  
+    }
+
+#demo {
+    font-size: 30px;
+    /* 
+    字体推荐大小12px
+    字体大小设置的字体的高度 */
+    font-weight: bolder;
+    font-style: italic;
+    font-family: Arial, Helvetica, sans-serif;
+    width: 0px;
+    height: 0px;
+    border: 100px solid black;
+    border-left-color: green;
+    border-right-color: #f04;
+    border-top-color: transparent;
+    border-bottom-color: transparent;
+
+}

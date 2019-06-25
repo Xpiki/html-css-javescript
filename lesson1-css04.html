@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="day03-css.css">
+</head>
+<body>
+    <div>
+        <em>123</em>
+        <span>
+            <em>456</em>
+        </span>
+    </div>
+    <!-- 
+        如何只给123加上背景颜色?
+
+         父子选择器|派生选择器
+         div em  div下所有的em生效
+
+         div > em  直接子元素选择器
+         div下第一级em生效
+     -->
+
+    <div>1</div>
+     <div class="demo">2</div>
+     <p class="demo">3</p>
+     <!-- 如何给2加上背景颜色? 
+         
+        并列选择性
+        div.demo
+        div#demo
+
+    -->
+
+    <em>1</em>
+    <strong>2</strong>
+    <span>3</span>
+    <!-- 
+        如何给1，2，3一起加背景?
+        分组选择器
+        em,
+        strong,
+        span{
+
+        }
+     -->
+     <br>
+     <br>
+     <div id="demo1">举个例子</div>
+     <div id=demo></div>
+</body>
+
+</html>

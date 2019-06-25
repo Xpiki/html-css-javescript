@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="button" value="第一题" onclick="Ex1()">
+    <textarea name="an1" id="an1" cols="30" rows="10" readonly="readonly">计算2的n次幂,n可输入,n为自然数</textarea>
+
+    <input type="button" value="第二题" onclick="Ex2()">
+    <textarea name="an2" id="an2" cols="30" rows="10" readonly="readonly">输入自然数n，计算n的阶乘</textarea>
+
+    <input type="button" value="第三题" onclick="Ex3()">
+    <textarea name="an3" id="an3" cols="30" rows="10">输入n,求第n个斐波那契数列</textarea>
+    <br>
+    <input type="button" value="第四题" onclick="Ex4()">
+    <textarea name="an4" id="an4" cols="30" rows="10">输入一个三位数的整数n,然后倒序输出这个三位数整数n</textarea>
+
+    <input type="button" value="第五题" onclick="Ex5()">
+    <textarea name="an5" id="an5" cols="30" rows="10">输入a,b,c三个数字,打印出最大数字</textarea>
+
+    <input type="button" value="第六题" onclick="Ex6()">
+    <textarea name="an6" id="an6" cols="30" rows="10">打印100以内的质数</textarea>
+
+
+    <script>
+
+        function Ex1() {
+            var num1 = parseInt(window.prompt("计算2的n次幂,n可输入,n为自然数"));
+
+            var str = "2";
+            var answer = 2;
+            if (num1) {
+                for (var i = 2; i <= num1; i++) {
+                    answer = answer * 2;
+                    str = str + " * 2"
+                }
+                str = "2的" + num1 + "次幂：" + str + " = " + answer;
+            }
+            else {
+                str = "请输入正确的自然数!";
+            }
+
+            document.getElementById("an1").innerHTML = str;
+        }
+        function Ex2() {
+            var num2 = parseInt(window.prompt("输入自然数n，计算n的阶乘"));
+            var str = "";
+            var answer = 1;
+            if (num2) {
+                for (var j = num2; j > 0; j--) {
+                    answer = answer * j;
+                    if (j != num2) {
+                        str = str + " * " + j;
+                    }
+                    else {
+                        str = j;
+                    }
+
+                }
+                str = num2 + "的阶乘是:" + str + " = " + answer;
+            } else {
+                str = "请输入正确的自然数!";
+            }
+            document.getElementById("an2").innerHTML = str;
+
+        }
+        function Ex3() {
+            //方法1,使用数组
+            var num3 = parseInt(window.prompt("输入n,求第n个斐波那契数列"));
+            var arr = [1, 1];
+            var ans = 1;
+            if (num3 && num3 > 2) {
+                for (var k = 2; k < num3; k++) {
+                    ans = arr[k - 1] + arr[k - 2]
+                    arr.push(ans);
+                }
+                document.getElementById("an3").innerHTML = arr;
+            } else {
+                document.getElementById("an3").innerHTML = "请正确输入大于2的自然数!!";
+            }
+            //方法2,不使用数组
+            var fitst = 1;
+            var second = 1;
+            var third;
+            var str = "";
+            if (num3 && num3 > 2) {
+                for (var i = 0; i < n - 2; i++) {
+                    third = first + second;
+                    first = second;
+                    second = third;
+                }
+            }
+
+
+
+        }
+        function Ex4() {
+            var num4 = parseInt(window.prompt("输入一个三位数的整数n,然后倒序输出这个三位数整数n"));
+            if (num4 && (num4 > 100 && num4 < 1000)) {
+                var newnum = num4 % 10 * 100 + parseInt(num4 % 100 / 10) * 10 + parseInt(num4 / 100);
+                // var newnum = num4 % 100 
+                document.getElementById("an4").innerHTML = newnum;
+            } else {
+                document.getElementById("an4").innerHTML = "请正确输入一个三位数的整数";
+            }
+        }
+        function Ex5() {
+            var num5 = window.prompt("输入a,b,c三个数字,中间用空格隔开,打印出最大数字");
+            var arr5 = num5.split(" ");
+            var max = arr5[0];
+            if (arr5.length == 3) {
+                for (var i = 1; i < arr5.length; i++) {
+                    if (arr5[i] > max) {
+                        max = arr5[i];
+
+                    }
+                }
+                document.getElementById("an5").innerHTML = max;
+            } else {
+                document.getElementById("an5").innerHTML = "请正确输入a,b,c三个数字,并且中间用空格隔开！！";
+            }
+
+        }
+        function Ex6() {
+            var flag = true;  //是质数;
+            var str = "";
+            for (var i = 2; i < 100; i ++) {
+                for (var j = 1; j <= Math.sqrt(i); j ++) {
+                    if (i % j == 0 && j != 1) {
+                        flag = false; //不是质数
+                        break;
+                    } else {
+                        flag = true;
+                    }
+                }
+                if (flag) {
+                    str = str + i + " ";
+                }
+            }
+            document.getElementById("an6").innerHTML = str;
+        }
+    </script>
+
+</body>
+
+</html>

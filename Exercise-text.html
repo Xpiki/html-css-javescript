@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    *{
+        margin: 0px;
+        padding: 0px;
+        
+    }
+    .wrapper{
+
+        width: 320px;
+        /* border: 1px solid black; */
+    }
+    .wrapper::after{
+        content: "";
+        display: block;
+        clear: both;
+    }
+    img{
+        width: 100px;
+        height: 100px;
+        float: left;
+        padding: 5px;;
+    }
+    .first{
+        font-size: 20px;
+        
+        
+        height: 40px;
+        color: #333;
+        line-height: 20px;
+        overflow: hidden;
+        margin-bottom: 8px;
+        
+    }
+    .second{
+        font-size: 12px;
+        
+        
+        line-height: 1.2em;
+        color: #666;
+        
+
+    }
+    .wrapper:hover{
+        width: 400px;
+    }
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <img class="img" src="kobe.JPG" alt="">
+        <p class="first">SQLServer2008要卸载后，经常不能重新安装，或者安装过程中出现这样那样的问</p>
+        <p class="second">SQLServer2008要卸载后，经常不能重新安装，或者安装过程中出现这样那样的问这样那样的问</p>
+    </div>
+</body>
+</html>
