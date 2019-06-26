@@ -4,9 +4,144 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>typeof类型转换</title>
 </head>
 <body>
     
+    <script>
+        // break  /  continue
+        var day = "";
+        var n = 1;
+        switch(n){
+            case 1:
+                day = "monday";
+                break;
+            case 2:
+                day = "tuesday";
+                break;
+            case 3: 
+                day = "wednesday"
+                break;
+            
+        }
+
+        for(var i = 0 ; i < 100 ; i ++){
+            if( i % 7 == 0 || i % 10 == 7){
+                console.log(i);
+            }else{
+                continue;
+                // 跳过本次循环 进行下一次循环;
+            }
+        }
+        // 一、显式转换
+        // 1.typeof() 
+        //  number  string boolean object undefined function
+        var num = 123;
+        var str = "123";
+        var bool = true;
+        console.log(typeof(num));
+        console.log(typeof str);
+        console.log(typeof(null)); // *!!--> object
+        console.log(typeof(undefined)); //--> undefined 
+        console.log(typeof(NaN)); //--> number
+
+        var num = "1" * "2";
+        console.log(typeof(num) + ":" + num);
+        var num = "123";
+        console.log(num + " " + typeof(Number(num)) + ":" + Number(num));
+        var num = true;
+        console.log(num + " " + typeof(Number(num)) + ":" + Number(num));
+        var num = undefined ;
+        console.log(num + " " + typeof(Number(num)) + ":" + Number(num));
+        var num = "abc";
+        console.log(num + " " + typeof(Number(num)) + ":" + Number(num));
+        var num = "123abc"
+        console.log(num + " " + typeof(Number(num)) + ":" + Number(num));
+        var num = "a";
+        console.log(num + " " + typeof(Number(num)) + ":" + Number(num));
+        // 2.Number() 
+        // 转换number true 是 1 , 其余是NaN
+
+        // 3.parsInt()   parsInt(num,2/10/16) 把num以2/10/16进制转化成10进制(2-36)
+        // 如：num = 1001; parsInt(num,2); 表示把num以二进制的形式转化成10进制,得到结果是9
+        // 把这个值转化为整型数,1.向下取整 2.把字符串转发成整型 *3.取字符串的整型位(必须数字开头)
+        // var num = 10010;
+        // console.log(parseInt(num,2));
+        // 18
+        var num  = "101010";
+        console.log(num + " " + typeof(Number(num)) + ":" + parseInt(num,2));
+
+        var num = "123.12px";
+        console.log(num + " " + typeof(Number(num)) + ":" + parseInt(num));
+
+        // 4.parsFloat() 同上,"121.2abc" 取121.2
+
+        // 5.String()
+        // 同Number(),将值转化为string
+
+        // 6.toString()
+        // 类似String，但有所区别
+        // 如num=24, num.toSring() 等同于 String(num),
+        // 特殊：但是null和undefined不能使用toString()转换
+        // 另外:toString()里可以填进制数，表示转换成目标进制
+        // 如:num = 16 , num.toString(16),表示把十进制的num转化成16进制的数,得到结果10;
+        // var num = 16;
+        // console.log(num.toString(16));
+        // 10
+
+        // 二、隐式转换 (隐式地去调用显式的方法)
+        // 1. isNaN() 判断一个值是不是NaN格式
+        console.log("abc " + "isNaN? " +isNaN("abc"));
+        console.log("123 " + "isNaN? " +isNaN("123"));
+        console.log("null " + "isNaN? " +isNaN(null));
+        console.log("undefined " + "isNaN? " +isNaN(undefined));
+        console.log("123 " + "isNaN? " +isNaN(123));
+        // var num = "abc";
+        // console.log(Number(num));
+        // Number(num) == NaN? true:false;
+        // 先用Number转化值再与NaN 比对;
+
+        // 2. ++/--  +/- 正负运算  先调用Number
+        var num = "123";
+        num ++;  //num --> 124   Number(num) ++  typeof(num) -->number
+        var num = "abc" 
+        num ++;  //num --> NaN   typeof(num)  --> number
+
+        var num = +"123"; // num -->123   
+
+        // 3. + 加号 加号两边有string类型的,就进行toString()显式转换
+        var num = "a" + 1;
+
+        // 4. -*/%  Number()
+
+        // 5. && || ! 
+
+        // 6. < >  <= >=
+        var num = 1 > "2" //数字比较，数字优先 Number()转换比较
+
+        // 7. ==  !=    Number()转换
+        
+        // 例子: == 要进行类型转换    ===/!== 不发生类型转换  数值类型全等于才等于
+
+        var a = 2 > 1 > 3;
+        var b = 2 > 3 < 1 ;
+
+        var c = undefined > 0;  //--> false
+        var d = undefined < 0;  //--> false
+        var e = undefined == 0;  //--> false
+
+        var x = null > 0; //--> false
+        var y = null < 0; //--> false
+        var z = null == 0; //--> false  
+
+        var num = undefined == null; //--> true  *特殊 没有隐式转换规则
+
+        var num = NaN == NaN;  //--> false  NaN不等于任何数
+        var num = NaN === NaN; //--> false
+
+        // 另外: 未定义的a 只有放在typeof()中才不报错, typeof(typeof(undefined));  -->string   typeof()返回的是string
+        
+
+    </script>
 </body>
 </html>
